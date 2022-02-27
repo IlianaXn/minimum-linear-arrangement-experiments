@@ -43,7 +43,9 @@ for i in range(len(arrangement)):
     
 # compute sum of edge lengths
 spectral_sum = lal.linarr.sum_edge_lengths(football_lal, arrangement_lal)
-print('Sum of arrangement =', spectral_sum)
+with open('results.txt', 'a') as f:
+    #print('Sum of spectral sequencing arrangement =', spectral_sum)
+    f.write(f'Sum of spectral sequencing arrangement = {spectral_sum}\n')
 
 ''' # without lal library
 

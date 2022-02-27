@@ -11,6 +11,7 @@ football = lal.io.read_edge_list('free_tree', 'football.txt')
 
 # compute minimum linear arrangement and its sum using Chung's algorithm
 min_sum, _ = lal.linarr.min_sum_edge_lengths(football, lal.linarr.algorithms_Dmin.Chung_2)
-print('Sum of minimum linear arrangement =', min_sum)
-
+with open('results.txt', 'w') as f:
+    #print('Sum of minimum linear arrangement =', min_sum)
+    f.write(f'Sum of minimum linear arrangement = {min_sum}\n')
 # help(lal.types.linear_arrangement.from_direct)
