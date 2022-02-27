@@ -102,6 +102,10 @@ def neighbor2b(arrangement, rt):
     result = []
     for i in aux:
         result.append(list(i))
+    
+    # shuffle neighborhood in order to choose at random
+    random.shuffle(result)
+    return result
 
 # find the neighborhood of the given permutation by swapping positions of three random nodes
 def neighbor3(arrangement):
@@ -161,7 +165,7 @@ def local_search(rt, version):
 
     # adjust arrangement to arrangement found before
     for i in range(len(current_permutation)):
-        arrangement_lal.assign(current_permutation[i], i)
+        arrangement_lal.assign(i, current_permutation[i])
 
     # sum of lenth of edges for random arrangement
     current_result = lal.linarr.sum_edge_lengths(rt, arrangement_lal)
@@ -181,7 +185,7 @@ def local_search(rt, version):
             # adjust arrangement to arrangement found before
             arrangement_lal = lal.types.linear_arrangement(rt.get_num_nodes())
             for i in range(len(next_arrangement)):
-                arrangement_lal.assign(next_arrangement[i], i)
+                arrangement_lal.assign(i, next_arrangement[i])
 
             # compute sum of lenth of edges
             result = lal.linarr.sum_edge_lengths(rt, arrangement_lal)
@@ -214,7 +218,7 @@ def local_search(rt, version):
             # adjust arrangement to arrangement found before
             arrangement_lal = lal.types.linear_arrangement(rt.get_num_nodes())
             for i in range(len(next_arrangement)):
-                arrangement_lal.assign(next_arrangement[i], i)
+                arrangement_lal.assign(i, next_arrangement[i])
 
             # compute sum of lenth of edges
             result = lal.linarr.sum_edge_lengths(rt, arrangement_lal)
@@ -247,7 +251,7 @@ def local_search(rt, version):
             # adjust arrangement to arrangement found before
             arrangement_lal = lal.types.linear_arrangement(rt.get_num_nodes())
             for i in range(len(next_arrangement)):
-                arrangement_lal.assign(next_arrangement[i], i)
+                arrangement_lal.assign(i, next_arrangement[i])
 
             # compute sum of lenth of edges
             result = lal.linarr.sum_edge_lengths(rt, arrangement_lal)

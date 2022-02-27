@@ -1,8 +1,8 @@
 Sum of minimum linear arrangement = 340
 Sum of spectral sequencing arrangement = 1915
-Sum of random arrangement = 3953
+Sum of random arrangement = 4941
 Expected sum of all arrangements = 4408.0
 Sum of normal arrangement = 4498
-Sum of local search arrangement v2 = 661
-Sum of local search arrangement v2b = 2776
-Sum of local search arrangement v3 = 3390
+Sum of local search arrangement v2 = 594
+Sum of local search arrangement v2b = 3080
+Sum of local search arrangement v3 = 1587
