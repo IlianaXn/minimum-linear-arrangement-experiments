@@ -1,10 +1,14 @@
 # minimum-linear-arrangement-experiments
 In general, the Minimum Linear Arrangement problem is defined as follows.
-Given a graph G(V,E) where E with |E|=m and V with |V|=n are the sets of edges and vertices respectively, a permutation π (or a linear ordering of the vertices or an one-dimensional layout) is defined as <img src="https://render.githubusercontent.com/render/math?math={\color{black}\pi: V \rightarrow \{1,2,...,n\}}">. The Minimum Linear Arrangement problem requires to find the permutation π s.t. the below objective function is minimized:
+Given a graph G(V,E) where E with |E|=m and V with |V|=n are the sets of edges and vertices respectively, a permutation π (or a linear ordering of the vertices or an one-dimensional layout) is defined as 
+
+<img src="https://render.githubusercontent.com/render/math?math={\color{black}\pi: V \rightarrow \{1,2,...,n\}}">
+
+The Minimum Linear Arrangement problem requires to find the permutation π s.t. the below objective function is minimized:
 
 <img src="https://render.githubusercontent.com/render/math?math={\color{black}\sum_{(i,j)\in E}{|\pi(i)-\pi(j)|}}">
 
-It's been proven that this problem is NP-complete for the general case. The solution is trivial when $G$ is a complete graph, since every arrangement is optimal. However, when $G$ is a rooted or undirected tree, complete bipartite, hypercube, rectangular or square mesh, etc, there exist algorithms of polynomial time.
+It's been proven that this problem is NP-complete for the general case. The solution is trivial when G is a complete graph, since every arrangement is optimal. However, when G is a rooted or undirected tree, complete bipartite, hypercube, rectangular or square mesh, etc, there exist algorithms of polynomial time.
 
 In this repo, we have so far implemented the following heuristics:
 * Spectral sequencing [^ref1]
