@@ -55,7 +55,7 @@ def neighbor2(arrangement):
 
             if length == 10000:
                 flag = False
-
+                
     # shuffle neighborhood in order to choose at random
     random.shuffle(result)
     return result
@@ -102,11 +102,6 @@ def neighbor2b(arrangement, rt):
     result = []
     for i in aux:
         result.append(list(i))
-
-    # shuffle neighborhood in order to choose at random
-    random.shuffle(result)
-    return result
-
 
 # find the neighborhood of the given permutation by swapping positions of three random nodes
 def neighbor3(arrangement):
