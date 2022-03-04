@@ -2,3 +2,4 @@ venv/
 .spyproject/
 example.txt
 graphs/adjacency_list/
+graphs/create_indices.py

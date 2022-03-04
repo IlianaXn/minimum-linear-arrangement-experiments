@@ -14,12 +14,11 @@ filenames = glob.glob("./adjacency_list/*")
 for file in filenames:
     with open(file) as adj, open(f'./edge_list/{file[17:-4]}.txt', 'w') as edge:
         content = adj.readlines()
-        
+
         n = int(content[0])
         degrees = list(map(int, content[2].split()))
         neighbors = list(map(int, content[3].split()))
-        indices = list(map(int, content[3].split()))
-        
+        indices = list(map(int, content[4].split()))
         
         for i in range(n):
             # for each node get its neighbors from adjacency list in positions
