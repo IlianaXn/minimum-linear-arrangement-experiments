@@ -8,7 +8,7 @@ import random
 import copy
 import laldebug as lal
 import numpy as np
-
+import time
 
 # swap positions of nodes at pos1 and pos2 positions
 def swapPositions2(arrangement, pos1, pos2):
@@ -27,7 +27,7 @@ def neighbor2(arrangement):
     # save given arrangement so it doesn't get affected by permutations
     initial = copy.deepcopy(arrangement)
 
-    # number of neighbor arrangements (at most 10...)
+    # number of neighbor arrangements (at most 5000...)
     length = 0
 
     # neighborhood of arrangements
@@ -53,7 +53,7 @@ def neighbor2(arrangement):
 
             length += 1
 
-            if length == 10000:
+            if length == 5000:
                 flag = False
                 
     # shuffle neighborhood in order to choose at random
@@ -66,7 +66,7 @@ def neighbor2b(arrangement, rt):
     # save given arrangement so it doesn't get affected by permutations
     initial = copy.deepcopy(arrangement)
 
-    # number of neighbor arrangements (at most 10...)
+    # number of neighbor arrangements (at most 5000...)
     length = 0
 
     # neighborhood of arrangements
@@ -97,7 +97,7 @@ def neighbor2b(arrangement, rt):
 
                 length += 1
 
-                if length == 10000:
+                if length == 5000:
                     flag = False
     result = []
     for i in aux:
@@ -112,7 +112,7 @@ def neighbor3(arrangement):
     # save given arrangement so it doesn't get affected by permutations
     initial = copy.deepcopy(arrangement)
 
-    # number of neighbor arrangements (at most 10...)
+    # number of neighbor arrangements (at most 5000...)
     length = 0
 
     # neighborhood of arrangements
@@ -141,7 +141,7 @@ def neighbor3(arrangement):
 
                 length += 1
 
-                if length == 10000:
+                if length == 5000:
                     flag = False
 
     # shuffle neighborhood in order to choose at random
@@ -152,7 +152,7 @@ def neighbor3(arrangement):
 def local_search(rt, version):
 
     # stopping criterion
-    max_tries = 10000
+    max_tries = 5000
 
     # when to stop, at most max_times
     current_tries = 0
@@ -276,20 +276,35 @@ def local_search(rt, version):
         print("Version should be 2 or 2b or 3 for now...")
     return current_result, current_permutation
 
+if __name__ == '__main__':
+    from argparse import ArgumentParser
 
-# create graph
-football = lal.io.read_edge_list('free_tree', 'football.txt')
+    parser = ArgumentParser()
+    parser.add_argument('-input', '--input', required=True, type=str, 
+                        help='graph file to read')
 
-with open('results.txt', 'a') as f:
-    # compute sum of length of edges according to local search v2 and v3
-    D2, _ = local_search(football, '2')
-    #print('Sum of local search arrangement v2 =', D2)
-    f.write(f'Sum of local search arrangement v2 = {D2}\n')
+    args = parser.parse_args()
+    path = args.input
     
-    D2b, _ = local_search(football, '2b')
-    #print('Sum of local search arrangement v2b =', D2b)
-    f.write(f'Sum of local search arrangement v2b = {D2b}\n')
+    # create graph
+    graph = lal.io.read_edge_list('free_tree', path)
     
-    D3, _ = local_search(football, '3')
-    #print('Sum of local search arrangement v3 =', D3)
-    f.write(f'Sum of local search arrangement v3 = {D3}\n')
+
+    
+    print('Local search v2b')
+    initial_time = time.time()
+    D2b, _ = local_search(graph, '2b')
+    total_time = time.time() - initial_time
+    print(D2b, total_time)
+    
+    print('Local search v2')
+    initial_time = time.time()
+    D2, _ = local_search(graph, '2')
+    total_time = time.time() - initial_time
+    print(D2, total_time)
+    
+    print('Local search v3')
+    initial_time = time.time()
+    D3, _ = local_search(graph, '3')
+    total_time = time.time() - initial_time
+    print(D3, total_time)

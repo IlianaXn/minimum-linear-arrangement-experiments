@@ -1,0 +1,238 @@
+bintree10
+Shiloach algorithm
+3696 0.9550373554229736
+Chung algorithm
+3696 1.0796961784362793
+Spectral sequencing
+196608 2.011420726776123
+Random layout
+329859 0.0
+Normal layout
+380249 0.0
+Local search v2b
+240161 480.5795783996582
+Local search v2
+175084 3431.70005941391
+Local search v3
+224397 1354.2547268867493
+c1y
+Shiloach algorithm
+25673 0.07813048362731934
+Chung algorithm
+25673 0.04686927795410156
+Spectral sequencing
+193769 0.7031228542327881
+Random layout
+212044 0.0
+Normal layout
+215157 0.0
+Local search v2b
+161373 173.85925912857056
+Local search v2
+116760 2085.8376545906067
+Local search v3
+168401 465.1816260814667
+c2y
+Shiloach algorithm
+31999 0.09374403953552246
+Chung algorithm
+31999 0.06249046325683594
+Spectral sequencing
+276518 1.0469119548797607
+Random layout
+326681 0.015626192092895508
+Normal layout
+295842 0.015626192092895508
+Local search v2b
+221732 298.4408802986145
+Local search v2
+136176 3277.6162486076355
+Local search v3
+249635 511.38727140426636
+football
+Shiloach algorithm
+340 0.015624284744262695
+Chung algorithm
+340 0.0
+Spectral sequencing
+1915 0.07811999320983887
+Random layout
+4421 0.0
+Normal layout
+3973 0.0
+Local search v2b
+3084 0.7980442047119141
+Local search v2
+540 86.37847328186035
+Local search v3
+1493 31.75238823890686
+gd95c
+Shiloach algorithm
+177 0.0
+Chung algorithm
+177 0.0
+Spectral sequencing
+871 0.062499284744262695
+Random layout
+1224 0.0
+Normal layout
+608 0.0
+Local search v2b
+899 0.09373354911804199
+Local search v2
+338 9.36081600189209
+Local search v3
+512 11.34514570236206
+gd96b
+Shiloach algorithm
+732 0.015626907348632812
+Chung algorithm
+732 0.0
+Spectral sequencing
+2886 0.06250190734863281
+Random layout
+3954 0.0
+Normal layout
+5281 0.0
+Local search v2b
+3058 0.3298368453979492
+Local search v2
+1058 61.243831157684326
+Local search v3
+3209 5.080796480178833
+gd96c
+Shiloach algorithm
+114 0.015628576278686523
+Chung algorithm
+114 0.0
+Spectral sequencing
+411 0.06249499320983887
+Random layout
+1336 0.0
+Normal layout
+1498 0.0
+Local search v2b
+948 0.14065241813659668
+Local search v2
+354 11.548463344573975
+Local search v3
+338 16.858047485351562
+gd96d
+Shiloach algorithm
+954 0.031256675720214844
+Chung algorithm
+954 0.0
+Spectral sequencing
+5239 0.09374308586120605
+Random layout
+11571 0.0
+Normal layout
+6994 0.0
+Local search v2b
+8039 1.9218902587890625
+Local search v2
+2616 148.81055641174316
+Local search v3
+3580 107.39663434028625
+hc10
+Shiloach algorithm
+3527 0.04687857627868652
+Chung algorithm
+3527 0.03124523162841797
+Spectral sequencing
+97803 2.109370470046997
+Random layout
+354634 0.0
+Normal layout
+427201 0.0
+Local search v2b
+232636 494.8284318447113
+Local search v2
+203622 3197.360442638397
+Local search v3
+331428 114.03029417991638
+randomA1
+Shiloach algorithm
+2088 0.01562952995300293
+Chung algorithm
+2088 0.015619993209838867
+Spectral sequencing
+44771 0.2187488079071045
+Random layout
+87944 0.0
+Normal layout
+88540 0.0
+Local search v2b
+57972 42.53832125663757
+Local search v2
+26432 1010.0641624927521
+Local search v3
+74303 47.42666935920715
+randomA2
+Shiloach algorithm
+3370 0.015627384185791016
+Chung algorithm
+3370 0.015616655349731445
+Spectral sequencing
+71828 0.21874666213989258
+Random layout
+88139 0.0
+Normal layout
+89763 0.0
+Local search v2b
+59057 31.254212141036987
+Local search v2
+27892 1084.215398311615
+Local search v3
+75752 16.19601345062256
+randomA3
+Shiloach algorithm
+1366 0.01562190055847168
+Chung algorithm
+1366 0.015624284744262695
+Spectral sequencing
+29947 0.28124260902404785
+Random layout
+74230 0.0
+Normal layout
+78439 0.0
+Local search v2b
+53791 42.55257058143616
+Local search v2
+18736 1273.2795991897583
+Local search v3
+29300 564.7679007053375
+randomG1
+Shiloach algorithm
+1371 0.015620946884155273
+Chung algorithm
+1371 0.031247377395629883
+Spectral sequencing
+33529 0.23436260223388672
+Random layout
+84475 0.0
+Normal layout
+89311 0.0
+Local search v2b
+56376 38.0758011341095
+Local search v2
+23432 1338.058362007141
+Local search v3
+61210 118.05864810943604
+randomG2
+Shiloach algorithm
+2298 0.015628576278686523
+Chung algorithm
+2298 0.015624284744262695
+Spectral sequencing
+41716 0.18752813339233398
+Random layout
+81305 0.0
+Normal layout
+98866 0.0
+Local search v2b
+59589 37.69344925880432
+Local search v2
+27208 1024.555775642395
+Local search v3
+71592 66.47940325737

@@ -25,4 +25,6 @@ for file in filenames:
             # indices[i] to indices[i] + degrees[i]
             for neigh in neighbors[indices[i] : indices[i] + degrees[i]]:
                 # add the edge to edge list file
-                edge.write(f'{i} {neigh}\n')
+                # add only one occurence of each edge
+                if i < neigh:
+                    edge.write(f'{i} {neigh}\n')

@@ -5,30 +5,44 @@ Created on Fri Feb 25 11:47:25 2022
 @author: ilmar
 """
 import laldebug as lal
+import time
 
-# create graph
-football = lal.io.read_edge_list('free_tree', 'football.txt')
 
-# create generator of random arrangements
-gen_rand_arr = lal.generate.rand_arrangements(football)
+def random_normal(path):
+    # create graph
+    graph = lal.io.read_edge_list('free_tree', path)
 
-# random layout
-# get a layout chosen at random and compute its sum of edge lengths
-random_arr = gen_rand_arr.yield_arrangement()
-random_sum = lal.linarr.sum_edge_lengths(football, random_arr)
-with open('results.txt', 'a') as f:
-    #print('Sum of random arrangement =', random_sum)
-    f.write(f'Sum of random arrangement = {random_sum}\n')
-    
-    # expected sum over all layouts chosen at random
-    expected_sum = lal.properties.exp_sum_edge_lengths(football)
-    #print('Expected sum of all arrangements =', expected_sum)
-    f.write(f'Expected sum of all arrangements = {expected_sum}\n')
-    
+    # create generator of random arrangements
+    gen_rand_arr = lal.generate.rand_arrangements(graph)
+
+    # random layout
+    # get a layout chosen at random and compute its sum of edge lengths
+    random_arr = gen_rand_arr.yield_arrangement()
+    random_sum = lal.linarr.sum_edge_lengths(graph, random_arr)
+
     # normal layout
-    # create identity arrangement, i.e. u's position is its label, 
+    # create identity arrangement, i.e. u's position is its label,
     # and compute sum of edge lengths
-    normal_arr = lal.types.linear_arrangement.identity(football.get_num_nodes())
-    normal_sum = lal.linarr.sum_edge_lengths(football, normal_arr)
-    #print('Sum of normal arrangement =', normal_sum)
-    f.write(f'Sum of normal arrangement = {normal_sum}\n')
+    normal_arr = lal.types.linear_arrangement.identity(graph.get_num_nodes())
+    normal_sum = lal.linarr.sum_edge_lengths(graph, normal_arr)
+    
+    return random_sum, normal_sum
+
+if __name__ == '__main__':
+    from argparse import ArgumentParser
+
+    parser = ArgumentParser()
+    parser.add_argument('-input', '--input', required=True, type=str,
+                        help='graph file to read')
+
+    args = parser.parse_args()
+    path = args.input
+
+    initial_time = time.time()
+    random, normal = random_normal(path)
+    total_time = time.time() - initial_time
+
+    print('Random layout')
+    print(random, total_time)
+    print('Normal layout')
+    print(normal, total_time)
